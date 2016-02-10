@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Convertir</title>
+	<meta charset="utf-8"></meta>
+	<script src="./node_modules/codepage/cptable.js"></script>
+	<script src="./node_modules/codepage/cputils.js"></script>
+	<style type="text/css">
+	#entree span {
+		display: block;
+		position: relative;
+		width: 230px;
+		height: 25px;
+		padding: 2px;
+	}
+	
+	label {
+		display: inline-block;
+	}
+	
+	input {
+		display: inline-block;
+		position: absolute;
+		right: 0
+	}
+	
+	textarea {
+		width: 500px;
+		height: 230px;
+	}
+	
+	#sortie {
+		padding: 20px;
+		font-size: 3em;
+		font-family: arial;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="entree">
+		<span><label for="de">De : </label><input id="de" type="number" value="1252" /></span>
+		<span><label for="vers"> Vers : </label><input id="vers" type="number" value="1255" /></span>
+		<textarea></textarea>
+	</div>
+	<div id="sortie"> </div>
+	<script type="text/javascript">
+	var txt = document.getElementsByTagName('textarea')[0],
+		sortie = document.getElementById('sortie'),
+		de = document.getElementById('de'),
+		vers = document.getElementById('vers');
+
+	var convert = function() {
+		sortie.innerHTML = cptable.utils.decode(vers.value, cptable.utils.encode(de.value, txt.value)).replace('\n', '<br/>', 'g');
+	};
+
+	txt.onmouseup = txt.onkeyup = txt.onchange = convert;
+	</script>
+</body>
+
+</html>
