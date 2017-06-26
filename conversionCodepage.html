@@ -14,22 +14,22 @@
 		height: 25px;
 		padding: 2px;
 	}
-	
+
 	label {
 		display: inline-block;
 	}
-	
+
 	input {
 		display: inline-block;
 		position: absolute;
 		right: 0
 	}
-	
+
 	textarea {
 		width: 500px;
 		height: 230px;
 	}
-	
+
 	#sortie {
 		padding: 20px;
 		font-size: 3em;
@@ -52,7 +52,10 @@
 		vers = document.getElementById('vers');
 
 	var convert = function() {
-		sortie.innerHTML = cptable.utils.decode(vers.value, cptable.utils.encode(de.value, txt.value)).replace('\n', '<br/>', 'g');
+		var ligne = txt.value.split("\n");
+		sortie.innerHTML = ligne.map(function(l){
+			return cptable.utils.decode(vers.value, cptable.utils.encode(de.value, l));
+		}).join("<br/>");
 	};
 
 	txt.onmouseup = txt.onkeyup = txt.onchange = convert;
