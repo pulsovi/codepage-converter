@@ -3,8 +3,5 @@
   "version": "0.1.0",
   "description": "Convertit du texte d'un codePage a un autre",
   "author": "David",
-  "dependencies": {
-    "codepage": "^1.3.8"
-  },
   "packageManager": "yarn@4.5.1"
 }

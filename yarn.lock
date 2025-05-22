@@ -5,17 +5,8 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"codepage@npm:^1.3.8":
-  version: 1.15.0
-  resolution: "codepage@npm:1.15.0"
-  checksum: 10c0/2455b482302cb784b46dea60a8ee83f0c23e794bdd979556bdb107abe681bba722af62a37f5c955ff4efd68fdb9688c3986e719b4fd536c0e06bb25bc82abea3
-  languageName: node
-  linkType: hard
-
 "conversion-code-page@workspace:.":
   version: 0.0.0-use.local
   resolution: "conversion-code-page@workspace:."
-  dependencies:
-    codepage: "npm:^1.3.8"
   languageName: unknown
   linkType: soft
